@@ -4,5 +4,8 @@
 
 Update Log:
 
+Update 1.02:
+JAN 31, 2020: MovementController.cs script added, containing basic four directional movement.
+
 Update 1.01:
 JAN 30, 2020: The creation of the repository; no C# coding/files at the moment.  These will be added at the next update.
