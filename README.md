@@ -4,6 +4,9 @@
 
 Update Log:
 
+Update 1.03:
+JAN 31, 2020: Two new classes added: PlayerHealthController.cs and UIController.cs
+
 Update 1.02:
 JAN 31, 2020: MovementController.cs script added, containing basic four directional movement.
 
