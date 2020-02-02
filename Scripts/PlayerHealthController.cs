@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/*Dungeon of the Funky Orcs
+ * A rogue-like RPG adventures designed by Mark Tasaka 2020
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +18,8 @@ public class PlayerHealthController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        UIController.instance.hitPointBar.maxValue = maxHitPoints;
     }
 
 
@@ -24,7 +29,7 @@ public class PlayerHealthController : MonoBehaviour
         currentHitPoints = maxHitPoints;
         UIController.instance.hitPointBar.maxValue = maxHitPoints;
         UIController.instance.hitPointBar.value = currentHitPoints;
-        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
+        UIController.instance.hitPointText.text = "HP: " + currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
 
     }
 

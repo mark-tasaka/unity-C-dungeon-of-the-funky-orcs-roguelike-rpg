@@ -10,13 +10,15 @@ public class MovementController : MonoBehaviour
 
     public float movementSpeed = 3.0f;
 
-    Vector2 movement = new Vector2();
+    private Vector2 movement = new Vector2();
 
-    Animator animator;
+    private Animator animator;
 
-    string animationState = "AnimationState";
+    private string animationState = "AnimationState";
 
-    Rigidbody2D rb2D;
+    private Rigidbody2D rb2D;
+
+  //  private Vector2 moveInput;
 
     enum CharStates
     {
@@ -24,7 +26,10 @@ public class MovementController : MonoBehaviour
         walkSouth = 2,
         walkWest = 3,
         walkNorth = 4,
-        idleSouth = 5
+        idleEast = 5,
+        idleSouth = 6,
+        idleWest = 7,
+        idleNoth = 8
     }
 
 
@@ -59,10 +64,49 @@ public class MovementController : MonoBehaviour
 
     private void UpdateState()
     {
+
+
+        /*
+        if (moveInput != Vector2.zero)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+        */
+
+
         if (movement.x > 0)
         {
             animator.SetInteger(animationState, (int)CharStates.walkEast);
+
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                animator.SetInteger(animationState, (int)CharStates.idleEast);
+            }
         }
+
+
+        if (movement.x < 0)
+        {
+            animator.SetInteger(animationState, (int)CharStates.walkWest);
+        }
+
+        if (movement.y > 0)
+        {
+            animator.SetInteger(animationState, (int)CharStates.walkNorth);
+        }
+
+        if (movement.y < 0)
+        {
+            animator.SetInteger(animationState, (int)CharStates.walkSouth);
+        }
+
+
+
+        /*
         else if (movement.x < 0)
         {
             animator.SetInteger(animationState, (int)CharStates.walkWest);
@@ -79,6 +123,7 @@ public class MovementController : MonoBehaviour
         {
             animator.SetInteger(animationState, (int)CharStates.walkSouth);
         }
+        */
 
     }
 

@@ -7,15 +7,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public Animator anim;
+
+    private float AnimSpeed = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim.speed = AnimSpeed;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+
     }
 }
