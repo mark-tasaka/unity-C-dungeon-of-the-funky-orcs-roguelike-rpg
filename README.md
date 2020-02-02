@@ -4,6 +4,10 @@
 
 Update Log:
 
+
+Update 1.03:
+Feb 1, 2020: Minor updates to existing classes.
+
 Update 1.02.1:
 JAN 31, 2020: Two new classes added: PlayerHealthController.cs and UIController.cs
 
