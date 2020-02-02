@@ -4,6 +4,8 @@
 
 Update Log:
 
+Update 1.04:
+Feb 2, 2020: Addition of the EnemyController.cs class and minor adjustments to the PlayerController.cs class.
 
 Update 1.03:
 Feb 1, 2020: Minor updates to existing classes.
