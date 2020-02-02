@@ -7,10 +7,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //static - set for all version of PlayerController script
+    public static PlayerController instance;
 
     public Animator anim;
 
     private float AnimSpeed = 0.5f;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +29,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
 
     }
