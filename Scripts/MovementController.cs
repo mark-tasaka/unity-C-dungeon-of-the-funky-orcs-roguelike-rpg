@@ -18,6 +18,8 @@ public class MovementController : MonoBehaviour
 
     private Rigidbody2D rb2D;
 
+    private bool stopRight = false;
+
   //  private Vector2 moveInput;
 
     enum CharStates
@@ -76,16 +78,17 @@ public class MovementController : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
         */
-
-
+        
         if (movement.x > 0)
         {
             animator.SetInteger(animationState, (int)CharStates.walkEast);
 
-            if (Input.GetKeyUp(KeyCode.RightArrow))
+            //Need to work on
+            if(movement.x == 0)
             {
                 animator.SetInteger(animationState, (int)CharStates.idleEast);
             }
+
         }
 
 
@@ -102,6 +105,12 @@ public class MovementController : MonoBehaviour
         if (movement.y < 0)
         {
             animator.SetInteger(animationState, (int)CharStates.walkSouth);
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animator.SetInteger(animationState, (int)CharStates.idleEast);
         }
 
 
