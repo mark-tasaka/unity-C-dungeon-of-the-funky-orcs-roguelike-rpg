@@ -4,6 +4,11 @@
 
 Update Log:
 
+
+
+Update 1.04.1:
+Feb 2, 2020: The addition of two new classes: Fungus.cs and FungusPieces.cs.  As well as minor modifications to some of the existing classes.
+
 Update 1.04:
 Feb 2, 2020: Addition of the EnemyController.cs class and minor adjustments to the PlayerController.cs class.
 
