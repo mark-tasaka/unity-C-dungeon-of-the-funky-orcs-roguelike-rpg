@@ -10,8 +10,8 @@ public class Fungus : MonoBehaviour
     public GameObject[] fungiPieces;
 
 
-    private int minPieces = 3;
-    private int maxPieces = 6;
+    private readonly int minPieces = 3;
+    private readonly int maxPieces = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +31,14 @@ public class Fungus : MonoBehaviour
         {
             Destroy(gameObject);
 
+            //Fungus Effect
+            PlayerHealthController.instance.FungusEffect();
+            
             int piecesToDrop = Random.Range(minPieces, maxPieces);
 
             for (int i = 0; i < piecesToDrop; ++i)
             {
-                int randomPiece = Random.Range(0, fungiPieces.Length-1);
+                int randomPiece = Random.Range(0, fungiPieces.Length);
 
                 Instantiate(fungiPieces[randomPiece], transform.position, transform.rotation);
 

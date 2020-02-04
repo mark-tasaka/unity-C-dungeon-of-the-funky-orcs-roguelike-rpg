@@ -39,7 +39,7 @@ public class PlayerHealthController : MonoBehaviour
         
     }
 
-    void DamageToPlayer()
+    public void DamageToPlayer()
     {
         //to be changed; place holder
         currentHitPoints -= 3;
@@ -47,5 +47,27 @@ public class PlayerHealthController : MonoBehaviour
         UIController.instance.hitPointBar.value = currentHitPoints;
         UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
         
+    }
+
+    //Effects of the fungus spores the players walks into
+    public void FungusEffect()
+    {
+        int dieRoll = Random.Range(1, 6);
+
+        if(dieRoll == 1)
+        {
+            currentHitPoints -= 1;
+        }
+        else if(dieRoll >=2 && dieRoll <=4)
+        {
+            currentHitPoints -= 3;
+        }
+        else if (dieRoll >= 5 && dieRoll <= 6)
+        {
+            currentHitPoints += 2;
+        }
+        
+        UIController.instance.hitPointBar.value = currentHitPoints;
+        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
     }
 }
