@@ -4,7 +4,8 @@
 
 Update Log:
 
-
+Update 1.05:
+Feb 3, 2020: Updates to PlayerHealthController.cs and Fungus.cs for damage incured by the player stepping on fungi.
 
 Update 1.04.1:
 Feb 2, 2020: The addition of two new classes: Fungus.cs and FungusPieces.cs.  As well as minor modifications to some of the existing classes.
