@@ -5,22 +5,29 @@
 Update Log:
 
 Update 1.05:
+
 Feb 3, 2020: Updates to PlayerHealthController.cs and Fungus.cs for damage incured by the player stepping on fungi.
 
 Update 1.04.1:
+
 Feb 2, 2020: The addition of two new classes: Fungus.cs and FungusPieces.cs.  As well as minor modifications to some of the existing classes.
 
 Update 1.04:
+
 Feb 2, 2020: Addition of the EnemyController.cs class and minor adjustments to the PlayerController.cs class.
 
 Update 1.03:
+
 Feb 1, 2020: Minor updates to existing classes.
 
 Update 1.02.1:
+
 JAN 31, 2020: Two new classes added: PlayerHealthController.cs and UIController.cs
 
 Update 1.02:
+
 JAN 31, 2020: MovementController.cs script added, containing basic four directional movement.
 
 Update 1.01:
+
 JAN 30, 2020: The creation of the repository; no C# coding/files at the moment.  These will be added at the next update.
