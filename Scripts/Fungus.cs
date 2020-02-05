@@ -31,6 +31,8 @@ public class Fungus : MonoBehaviour
         {
             Destroy(gameObject);
 
+            AudioManager.instance.PopFungi();
+
             //Fungus Effect
             PlayerHealthController.instance.FungusEffect();
             
@@ -44,5 +46,11 @@ public class Fungus : MonoBehaviour
 
             }
         }
+    }
+
+    //Fungus becomes invisible (obj destroyed) when it leaves the screen
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
