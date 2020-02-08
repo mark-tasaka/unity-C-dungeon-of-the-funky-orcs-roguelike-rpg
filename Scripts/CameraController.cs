@@ -13,11 +13,12 @@ public class CameraController : MonoBehaviour
 
     public Transform target;
 
-    /*
+    
     private void Awake()
     {
         instance = this;
-    }*/
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,4 +35,12 @@ public class CameraController : MonoBehaviour
         }
 
     }
+
+
+    public void ChangeTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
+
+
 }
