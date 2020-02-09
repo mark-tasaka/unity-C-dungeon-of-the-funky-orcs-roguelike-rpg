@@ -6,55 +6,58 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.10:
+
+Feb 9, 2020: The addition of LevelManager.cs and ExitLevel.cs classes and updates to exisiting classes.
+
 Update 1.09:
 
-    Feb 8, 2020: The addition of Doors.cs, Pot.cs and PotPieces.cs classes and updates to exisiting classes.
+Feb 8, 2020: The addition of Doors.cs, Pot.cs and PotPieces.cs classes and updates to exisiting classes.
 
 Update 1.08:
 
-    Feb 7, 2020: The addition of the Room.cs class and updates to the CameraController.cs class.
+Feb 7, 2020: The addition of the Room.cs class and updates to the CameraController.cs class.
 
 Update 1.07:
 
-    Feb 5, 2020: The creation of the CameraController.cs class.
+Feb 5, 2020: The creation of the CameraController.cs class.
 
 
 Update 1.06:
 
-    Feb 4, 2020: The creation of the AudioManager.cs class and modifications to the Fungus.cs class.
+Feb 4, 2020: The creation of the AudioManager.cs class and modifications to the Fungus.cs class.
 
 
 Update 1.05:
 
-    Feb 3, 2020: Updates to PlayerHealthController.cs and Fungus.cs for damage incured by the player stepping on fungi.
+Feb 3, 2020: Updates to PlayerHealthController.cs and Fungus.cs for damage incured by the player stepping on fungi.
 
 
 Update 1.04.1:
 
-    Feb 2, 2020: The addition of two new classes: Fungus.cs and FungusPieces.cs.  As well as minor modifications to some of the     
-    existing classes.
+Feb 2, 2020: The addition of two new classes: Fungus.cs and FungusPieces.cs.  As well as minor modifications to some of the     existing classes.
 
 
 Update 1.04:
 
-  Feb 2, 2020: Addition of the EnemyController.cs class and minor adjustments to the PlayerController.cs class.
+Feb 2, 2020: Addition of the EnemyController.cs class and minor adjustments to the PlayerController.cs class.
 
 
 Update 1.03:
 
-  Feb 1, 2020: Minor updates to existing classes.
+Feb 1, 2020: Minor updates to existing classes.
 
 
 Update 1.02.1:
 
-  Jan 31, 2020: Two new classes added: PlayerHealthController.cs and UIController.cs
+Jan 31, 2020: Two new classes added: PlayerHealthController.cs and UIController.cs
 
 
 Update 1.02:
 
-  Jan 31, 2020: MovementController.cs script added, containing basic four directional movement.
+Jan 31, 2020: MovementController.cs script added, containing basic four directional movement.
 
 
 Update 1.01:
 
-  Jan 30, 2020: The creation of the repository; no C# coding/files at the moment.  These will be added at the next update.
+Jan 30, 2020: The creation of the repository; no C# coding/files at the moment.  These will be added at the next update.
