@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     public Animator anim;
 
+    [HideInInspector]
+    public bool canMove = true;
+
     private float AnimSpeed = 0.5f;
 
     private void Awake()
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        //NEED TO BRING MOVEMENT CONTROLLER OVER
 
 
     }

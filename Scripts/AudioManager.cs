@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource gameMusic;
 
+    public AudioSource exitLevelMusic;
+
     public AudioSource[] sfx;
 
 
@@ -43,4 +45,12 @@ public class AudioManager : MonoBehaviour
         sfx[sfxToPlay].Play();
 
     }
+
+    public void NextLevel()
+    {
+        gameMusic.Stop();
+        exitLevelMusic.Play();
+    }
+
+
 }
