@@ -6,6 +6,12 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+
+
+Update 1.10.1:
+
+Feb 9, 2020: A new folder title 'Custom Art' has been added along with my first sprint sheet (goblinBasicForward) and animation (goblinBasticForward.anim).
+
 Update 1.10:
 
 Feb 9, 2020: The addition of LevelManager.cs and ExitLevel.cs classes and updates to exisiting classes.
