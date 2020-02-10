@@ -18,8 +18,7 @@ public class PlayerHealthController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
-        UIController.instance.hitPointBar.maxValue = maxHitPoints;
+        
     }
 
 
@@ -65,6 +64,11 @@ public class PlayerHealthController : MonoBehaviour
         else if (dieRoll >= 5 && dieRoll <= 6)
         {
             currentHitPoints += 2;
+
+            if(currentHitPoints > maxHitPoints)
+            {
+                currentHitPoints = maxHitPoints;
+            }
         }
         
         UIController.instance.hitPointBar.value = currentHitPoints;
