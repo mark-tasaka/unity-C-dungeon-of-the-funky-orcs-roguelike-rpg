@@ -8,6 +8,10 @@ Update Log:
 
 
 
+Update 1.10.2:
+
+Feb 9, 2020: Delete the MovementController.cs and the PlayerMovementController.cs classes, as I had combined I had incorporated the code from these classes into the PlayerController.cs class.  Updated some of the existing classes.
+
 Update 1.10.1:
 
 Feb 9, 2020: A new folder title 'Custom Art' has been added along with my first sprint sheet (goblinBasicForward) and animation (goblinBasticForward.anim).
