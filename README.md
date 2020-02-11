@@ -8,6 +8,10 @@ Update Log:
 
 
 
+Update 1.11:
+
+Feb 10, 2020: New 'home-made' sprite sheets and animations have been added.  As well, the Fungi.cs and FungiPieces.cs classes have been modified.
+
 Update 1.10.2:
 
 Feb 9, 2020: Delete the MovementController.cs and the PlayerMovementController.cs classes, as I had combined I had incorporated the code from these classes into the PlayerController.cs class.  Updated some of the existing classes.
