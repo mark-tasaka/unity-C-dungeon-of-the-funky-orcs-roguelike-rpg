@@ -48,30 +48,58 @@ public class PlayerHealthController : MonoBehaviour
         
     }
 
-    //Effects of the fungus spores the players walks into
-    public void FungusEffect()
-    {
-        int dieRoll = Random.Range(1, 6);
 
-        if(dieRoll == 1)
-        {
-            currentHitPoints -= 1;
-        }
-        else if(dieRoll >=2 && dieRoll <=4)
-        {
-            currentHitPoints -= 3;
-        }
-        else if (dieRoll >= 5 && dieRoll <= 6)
+    public void FungusEffect(bool fungi)
+    {
+
+        if(fungi == true)
         {
             currentHitPoints += 2;
 
-            if(currentHitPoints > maxHitPoints)
+            if (currentHitPoints > maxHitPoints)
             {
                 currentHitPoints = maxHitPoints;
             }
         }
-        
+
+        if(fungi == false)
+        {
+            currentHitPoints -= 1;
+        }
+
         UIController.instance.hitPointBar.value = currentHitPoints;
         UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
     }
+
+    //Effects of the fungus spores the players walks into
+    /*  
+       public void FungusEffect()
+      {
+          int dieRoll = Random.Range(1, 6);
+
+          if(dieRoll == 1)
+          {
+              currentHitPoints -= 1;
+          }
+          else if(dieRoll >=2 && dieRoll <=4)
+          {
+              currentHitPoints -= 3;
+          }
+          else if (dieRoll >= 5 && dieRoll <= 6)
+          {
+              currentHitPoints += 2;
+
+              if(currentHitPoints > maxHitPoints)
+              {
+                  currentHitPoints = maxHitPoints;
+              }
+          }
+
+          UIController.instance.hitPointBar.value = currentHitPoints;
+          UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
+      }
+      */
+
+
+
 }

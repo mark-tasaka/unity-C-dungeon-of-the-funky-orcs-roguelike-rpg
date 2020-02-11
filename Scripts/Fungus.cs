@@ -7,11 +7,22 @@ using UnityEngine;
 
 public class Fungus : MonoBehaviour
 {
-    public GameObject[] fungiPieces;
+
+    public static Fungus instance;
+
+    public GameObject[] fungiPiecesHeal;
+    public GameObject[] fungiPiecesHarm;
 
 
     private readonly int minPieces = 3;
     private readonly int maxPieces = 6;
+
+    private bool isGoodFungus = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -33,18 +44,42 @@ public class Fungus : MonoBehaviour
 
             AudioManager.instance.PopFungi();
 
-            //Fungus Effect
-            PlayerHealthController.instance.FungusEffect();
-            
-            int piecesToDrop = Random.Range(minPieces, maxPieces);
+            int die = Random.Range(1, 4);
 
-            for (int i = 0; i < piecesToDrop; ++i)
+            if(die <3)
             {
-                int randomPiece = Random.Range(0, fungiPieces.Length);
+                isGoodFungus = true;
 
-                Instantiate(fungiPieces[randomPiece], transform.position, transform.rotation);
+                //Fungus Effect
+                PlayerHealthController.instance.FungusEffect(isGoodFungus);
+
+                int piecesToDrop = Random.Range(minPieces, maxPieces);
+
+                for (int i = 0; i < piecesToDrop; ++i)
+                {
+                    int randomPiece = Random.Range(0, fungiPiecesHeal.Length);
+
+                    Instantiate(fungiPiecesHeal[randomPiece], transform.position, transform.rotation);
+
+                }
+            }
+            else
+            {
+                //Fungus Effect
+                PlayerHealthController.instance.FungusEffect(isGoodFungus);
+
+                int piecesToDrop = Random.Range(minPieces, maxPieces);
+
+                for (int i = 0; i < piecesToDrop; ++i)
+                {
+                    int randomPiece = Random.Range(0, fungiPiecesHarm.Length);
+
+                    Instantiate(fungiPiecesHarm[randomPiece], transform.position, transform.rotation);
+
+                }
 
             }
+            
         }
     }
 
