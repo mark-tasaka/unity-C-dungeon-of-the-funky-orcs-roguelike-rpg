@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.NextLevel();
 
         PlayerController.instance.canMove = false;
+        UIController.instance.StartFadeToBlack();
 
         //wait in the middle of a coroutine
         yield return new WaitForSeconds(waitToLoad);
