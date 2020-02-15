@@ -7,6 +7,10 @@
 Update Log:
 
 
+Update 1.13:
+
+Feb 14, 2020: The UIController.cs and LevelManager.cs classes have been updated.
+
 Update 1.12:
 
 Feb 11, 2020: A new sprint-sheet of the Title/Intro page's logo and associated animation has been added.  As well, a new class for managing the speed of the animation has been created (AnimationManager.cs).
