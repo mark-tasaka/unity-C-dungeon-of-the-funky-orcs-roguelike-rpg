@@ -7,6 +7,11 @@
 Update Log:
 
 
+
+Update 1.14:
+
+Feb 15, 2020: Two new classes have been added: MainMenu.cs and AudioTitleManager.cs classes.  As well, a png graphic for the main menu has been added.
+
 Update 1.13:
 
 Feb 14, 2020: The UIController.cs and LevelManager.cs classes have been updated.
