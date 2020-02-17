@@ -6,7 +6,9 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.15:
 
+Feb 16, 2020: A new spritesheet (TitleSprite.png) and accompanying animation (TitlePage.anim) have been added.
 
 Update 1.14:
 
