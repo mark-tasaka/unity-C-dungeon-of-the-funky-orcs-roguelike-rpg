@@ -6,6 +6,12 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+
+Update 1.16:
+
+Feb 17, 2020: SurvivedDungeon.cs class added.
+
+
 Update 1.15:
 
 Feb 16, 2020: A new spritesheet (TitleSprite.png) and accompanying animation (TitlePage.anim) have been added.
