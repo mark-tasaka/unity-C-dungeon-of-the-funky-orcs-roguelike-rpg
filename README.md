@@ -7,6 +7,12 @@
 Update Log:
 
 
+Update 1.17:
+
+Feb 18, 2020: Paused feature added. Updates to PlayerController.cs, UIController.cs and LevelManager.cs classes.
+
+
+
 Update 1.16:
 
 Feb 17, 2020: SurvivedDungeon.cs class added.
