@@ -61,20 +61,20 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(canMove)
-        {
-            UpdateState();
-        }
-        else
-        {
-            rb2D.velocity = Vector2.zero;
-            anim.SetBool("isMoving", false);
-        }
+     {
+        //NEED TO FIX PAUSE, WALKING IN ONE DIRECTION ISSUE
+         if(canMove && !LevelManager.instance.isPaused)
+         {
+             UpdateState();
+         }
+         else
+         {
+             rb2D.velocity = Vector2.zero;
+             anim.SetBool("isMoving", false);
+         }
 
-        //NEED TO BRING MOVEMENT CONTROLLER OVER
-    }
-
+         //NEED TO BRING MOVEMENT CONTROLLER OVER
+     }
 
     private void FixedUpdate()
     {

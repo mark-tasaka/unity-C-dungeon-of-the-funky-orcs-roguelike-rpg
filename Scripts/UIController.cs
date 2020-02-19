@@ -7,6 +7,9 @@ using UnityEngine;
 //Library for UI elements
 using UnityEngine.UI;
 
+//Library for SceneManager
+using UnityEngine.SceneManagement;
+
 public class UIController : MonoBehaviour
 {
     public static UIController instance;
@@ -16,6 +19,11 @@ public class UIController : MonoBehaviour
     public Image fadeScreen;
     public float fadeSpeed;
     private bool fadeToBlack, fadeOutBlack;
+
+
+    public string newGameScene, mainMenuScene;
+
+    public GameObject pauseMenu;
 
 
     private void Awake()
@@ -63,5 +71,25 @@ public class UIController : MonoBehaviour
         fadeOutBlack = false;
     }
 
+
+    public void NewGame()
+    {
+        //unpause game
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(newGameScene);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        //unpause game
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(mainMenuScene);
+    }
+
+    public void Resume()
+    {
+        LevelManager.instance.PauseUnpause();
+
+    }
 
 }
