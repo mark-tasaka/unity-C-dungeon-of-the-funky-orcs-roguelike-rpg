@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.19:
+
+Feb 19, 2020: Updates to the DungeonGenertor.cs class.
+
 Update 1.18:
 
 Feb 19, 2020: DungeonGenertor.cs class added.
