@@ -31,9 +31,10 @@ public class DungeonGenerator : MonoBehaviour
     private GameObject endRoom;
 
     private List<GameObject> layoutRoomObject = new List<GameObject>();
+    
+    public RoomPrefabs rooms;
 
-
-
+    private List<GameObject> generatedOutlines = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,18 @@ public class DungeonGenerator : MonoBehaviour
             }
 
         }
+
+        //Create Room Outline
+        CreateRoomOutline(Vector3.zero);
+
+        foreach (GameObject room in layoutRoomObject)
+        {
+            CreateRoomOutline(room.transform.position);
+        }
+
+        CreateRoomOutline(endRoom.transform.position);
+
+
     }
 
     // Update is called once per frame
@@ -108,4 +121,152 @@ public class DungeonGenerator : MonoBehaviour
         }
 
     }
+
+
+    public void CreateRoomOutline(Vector3 roomPosition)
+    {
+        bool roomNorth = Physics2D.OverlapCircle(roomPosition + new Vector3(0f, yOffSet, 0f), 0.2f, whatIsRoom);
+        bool roomSouth = Physics2D.OverlapCircle(roomPosition + new Vector3(0f, -yOffSet, 0f), 0.2f, whatIsRoom);
+        bool roomWest = Physics2D.OverlapCircle(roomPosition + new Vector3(-xOffset, 0f, 0f), 0.2f, whatIsRoom);
+        bool roomEast = Physics2D.OverlapCircle(roomPosition + new Vector3(xOffset, 0f, 0f), 0.2f, whatIsRoom);
+
+        int directionCount = 0;
+
+        if (roomNorth == true)
+        {
+            directionCount++;
+        }
+
+        if (roomSouth == true)
+        {
+            directionCount++;
+        }
+
+        if (roomWest == true)
+        {
+            directionCount++;
+        }
+
+        if (roomEast == true)
+        {
+            directionCount++;
+        }
+
+        switch (directionCount)
+        {
+            //error case
+            case 0:
+                Debug.LogError("Found no room exists");
+                break;
+
+            case 1:
+                if (roomNorth)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.north, roomPosition, transform.rotation));
+                }
+
+                if (roomSouth)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.south, roomPosition, transform.rotation));
+                }
+
+                if (roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.west, roomPosition, transform.rotation));
+                }
+
+                if (roomEast)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.east, roomPosition, transform.rotation));
+                }
+
+
+                break;
+
+            case 2:
+                
+                if (roomNorth && roomSouth)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.northSouth, roomPosition, transform.rotation));
+                }
+
+                if (roomNorth && roomEast)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.northEast, roomPosition, transform.rotation));
+                }
+
+                if (roomNorth && roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.northWest, roomPosition, transform.rotation));
+                }
+
+                if (roomSouth && roomEast)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.southEast, roomPosition, transform.rotation));
+                }
+
+                if (roomSouth && roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.southWest, roomPosition, transform.rotation));
+                }
+
+                if (roomEast && roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.eastWest, roomPosition, transform.rotation));
+                }
+
+                break;
+
+            case 3:
+
+                if (roomNorth && roomSouth && roomEast)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.northSouthEast, roomPosition, transform.rotation));
+                }
+
+                if (roomNorth && roomSouth && roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.northSouthWest, roomPosition, transform.rotation));
+                }
+
+                if (roomNorth && roomEast && roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.northEastWest, roomPosition, transform.rotation));
+                }
+
+                if (roomSouth && roomEast && roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.southEastWest, roomPosition, transform.rotation));
+                }
+
+                break;
+
+            case 4:
+                
+                if (roomNorth && roomSouth && roomEast && roomWest)
+                {
+                    generatedOutlines.Add(Instantiate(rooms.northSouthEastWest, roomPosition, transform.rotation));
+                }
+
+                break;
+
+        }
+
+    }
+
+
+
 }
+
+
+//Unity process it as a data object being stored
+[System.Serializable]
+public class RoomPrefabs
+{
+
+    public GameObject north, south, east, west,
+        northSouth, northEast, northWest, southEast, southWest, eastWest,  
+       northSouthEast, northSouthWest, northEastWest, southEastWest,
+        northSouthEastWest;
+}
+
