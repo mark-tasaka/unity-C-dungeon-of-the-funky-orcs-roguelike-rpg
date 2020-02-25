@@ -7,13 +7,17 @@
 Update Log:
 
 
+Update 1.21:
+
+Feb 24, 2020: RoomCentre.cs class added.
+
 Update 1.20:
 
 Feb 23, 2020: More updates to the DungeonGenertor.cs class.
 
 Update 1.19:
 
-Feb 19, 2020: Updates to the DungeonGenertor.cs class.
+Feb 20, 2020: Updates to the DungeonGenertor.cs class.
 
 Update 1.18:
 
