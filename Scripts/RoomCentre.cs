@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class RoomCentre : MonoBehaviour
 {
-    /*
+    
     public Room theRoom;
+
+    /*
 
     public List<GameObject> enemies = new List<GameObject>();
     */

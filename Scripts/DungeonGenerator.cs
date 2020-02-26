@@ -36,6 +36,11 @@ public class DungeonGenerator : MonoBehaviour
 
     private List<GameObject> generatedOutlines = new List<GameObject>();
 
+    //References to roomCentre objects
+    public RoomCentre centreStart, centreEnd;
+
+    public RoomCentre[] potentialCentres;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +89,37 @@ public class DungeonGenerator : MonoBehaviour
 
         CreateRoomOutline(endRoom.transform.position);
 
+        foreach (GameObject outline in generatedOutlines)
+        {
+            bool generateCentre = true;
+
+            //checking start position
+            if (outline.transform.position == Vector3.zero)
+            {
+                Instantiate(centreStart, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+
+                generateCentre = false;
+
+            }
+
+            if (outline.transform.position == endRoom.transform.position)
+            {
+                Instantiate(centreEnd, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+
+                generateCentre = false;
+
+            }
+
+            if (generateCentre)
+            {
+                int centreSelect = Random.Range(0, potentialCentres.Length);
+
+                Instantiate(potentialCentres[centreSelect], outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+            }
+
+
+
+        }
 
     }
 
