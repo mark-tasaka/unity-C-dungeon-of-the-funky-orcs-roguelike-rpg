@@ -7,6 +7,11 @@
 Update Log:
 
 
+
+Update 1.22:
+
+Feb 25, 2020: Updates to RoomCentre.cs class.
+
 Update 1.21:
 
 Feb 24, 2020: RoomCentre.cs class added.
