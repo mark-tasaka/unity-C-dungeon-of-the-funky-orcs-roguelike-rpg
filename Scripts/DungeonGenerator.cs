@@ -126,11 +126,13 @@ public class DungeonGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //only in Unity Editor
+#if UNITY_EDITOR
         if (Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+#endif
     }
 
 

@@ -21,6 +21,16 @@ public class EnemyController : MonoBehaviour
     private Vector3 moveDirection;
     private float AnimSpeed = 0.5f;
 
+    /*
+     * Create different behavours for different
+     * enemy reactions:
+     * 1. Attack
+     * 2. Flee
+     * 3. Wander
+     * 
+     * public float reaction range;
+     */
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +46,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+         * Add different if statement for different behavious of enenmy
+         */
+         
+
         if (theBody.isVisible && PlayerController.instance.gameObject.activeInHierarchy)
         {
             if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToAttackPlayer)
