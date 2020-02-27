@@ -9,6 +9,10 @@ Update Log:
 
 
 
+Update 1.24:
+
+Feb 27, 2020: A new sprint sheet, FungiBall.png, has been added along with the animation for the sprint sheet (fungiBall1.anim).
+
 Update 1.23:
 
 Feb 26, 2020: Updates to DungeonGenerator.cs and EnemyController.cs classes.
