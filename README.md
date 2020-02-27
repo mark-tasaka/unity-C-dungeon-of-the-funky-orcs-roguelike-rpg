@@ -8,6 +8,11 @@ Update Log:
 
 
 
+
+Update 1.23:
+
+Feb 26, 2020: Updates to DungeonGenerator.cs and EnemyController.cs classes.
+
 Update 1.22:
 
 Feb 25, 2020: Updates to RoomCentre.cs class.
