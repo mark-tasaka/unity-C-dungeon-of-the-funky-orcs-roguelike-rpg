@@ -9,6 +9,10 @@ Update Log:
 
 
 
+Update 1.25:
+
+Feb 28, 2020: The creation of the EnemySporeBallBehviour.cs class and updates to EnemyController.cs.
+
 Update 1.24:
 
 Feb 27, 2020: A new sprint sheet, FungiBall.png, has been added along with the animation for the sprint sheet (fungiBall1.anim).
