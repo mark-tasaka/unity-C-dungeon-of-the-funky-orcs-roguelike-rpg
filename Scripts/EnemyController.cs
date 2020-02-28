@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
 
     private int hitPoints;
     private Vector3 moveDirection;
-    private float AnimSpeed = 0.5f;
+   // private float AnimSpeed = 0.5f;
 
     /*
      * Create different behavours for different
@@ -35,7 +35,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim.speed = AnimSpeed;
+        //anim.speed = AnimSpeed;
 
         hitPoints = GenerateHitPoints(hitPointsMinRange, hitPointsMaxRange);
 
