@@ -6,8 +6,9 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.26:
 
-
+Feb 29, 2020: A new sprint sheet, SporeBallRed.png, has been added along with the animation for the sprint sheet (SporeBallRed.anim).
 
 Update 1.25:
 
