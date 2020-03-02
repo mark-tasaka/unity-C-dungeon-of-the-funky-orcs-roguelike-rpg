@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.27:
+
+Mar 1, 2020: TestScript sub-folder and TestEnemyController.cs class added.
+
 Update 1.26:
 
 Feb 29, 2020: A new sprint sheet, SporeBallRed.png, has been added along with the animation for the sprint sheet (SporeBallRed.anim).
