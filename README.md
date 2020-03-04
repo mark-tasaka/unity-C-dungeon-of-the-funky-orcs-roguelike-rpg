@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.28:
+
+Mar 3, 2020: Created TestCameraFollowPlayer.cs script in TestScript sub-folder to allow the camera to follow the player around the dungeon (versus a static camera).
+
 Update 1.27:
 
 Mar 1, 2020: TestScript sub-folder and TestEnemyController.cs class added.
