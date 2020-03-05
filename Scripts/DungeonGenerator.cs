@@ -49,6 +49,12 @@ public class DungeonGenerator : MonoBehaviour
     [Header("Room Arrays")]
     public GameObject[] roomN;
     public GameObject[] roomS;
+    public GameObject[] roomE;
+    public GameObject[] roomW;
+
+    public GameObject[] roomNS;
+    public GameObject[] roomNE;
+    public GameObject[] roomNW;
 
     // Start is called before the first frame update
     void Start()
@@ -194,15 +200,16 @@ public class DungeonGenerator : MonoBehaviour
             directionCount++;
         }
 
+        if (roomEast == true)
+        {
+            directionCount++;
+        }
+
         if (roomWest == true)
         {
             directionCount++;
         }
 
-        if (roomEast == true)
-        {
-            directionCount++;
-        }
 
         switch (directionCount)
         {
@@ -228,14 +235,18 @@ public class DungeonGenerator : MonoBehaviour
 
                 }
 
-                if (roomWest)
-                {
-                    generatedOutlines.Add(Instantiate(rooms.west, roomPosition, transform.rotation));
-                }
-
                 if (roomEast)
                 {
-                    generatedOutlines.Add(Instantiate(rooms.east, roomPosition, transform.rotation));
+                    //generatedOutlines.Add(Instantiate(rooms.west, roomPosition, transform.rotation));
+                    int roomChoiceE = Random.Range(0, roomE.Length);
+                    generatedOutlines.Add(Instantiate(roomE[roomChoiceE], roomPosition, transform.rotation));
+                }
+
+                if (roomWest)
+                {
+                    //generatedOutlines.Add(Instantiate(rooms.east, roomPosition, transform.rotation));
+                    int roomChoiceW = Random.Range(0, roomW.Length);
+                    generatedOutlines.Add(Instantiate(roomW[roomChoiceW], roomPosition, transform.rotation));
                 }
 
 
@@ -245,17 +256,23 @@ public class DungeonGenerator : MonoBehaviour
                 
                 if (roomNorth && roomSouth)
                 {
-                    generatedOutlines.Add(Instantiate(rooms.northSouth, roomPosition, transform.rotation));
+                    //generatedOutlines.Add(Instantiate(rooms.northSouth, roomPosition, transform.rotation));
+                    int roomChoiceNS = Random.Range(0, roomNS.Length);
+                    generatedOutlines.Add(Instantiate(roomNS[roomChoiceNS], roomPosition, transform.rotation));
                 }
 
                 if (roomNorth && roomEast)
                 {
-                    generatedOutlines.Add(Instantiate(rooms.northEast, roomPosition, transform.rotation));
+                    //generatedOutlines.Add(Instantiate(rooms.northEast, roomPosition, transform.rotation));
+                    int roomChoiceNE = Random.Range(0, roomNE.Length);
+                    generatedOutlines.Add(Instantiate(roomNE[roomChoiceNE], roomPosition, transform.rotation));
                 }
 
                 if (roomNorth && roomWest)
                 {
-                    generatedOutlines.Add(Instantiate(rooms.northWest, roomPosition, transform.rotation));
+                    //generatedOutlines.Add(Instantiate(rooms.northWest, roomPosition, transform.rotation));
+                    int roomChoiceNW = Random.Range(0, roomNW.Length);
+                    generatedOutlines.Add(Instantiate(roomNW[roomChoiceNW], roomPosition, transform.rotation));
                 }
 
                 if (roomSouth && roomEast)
