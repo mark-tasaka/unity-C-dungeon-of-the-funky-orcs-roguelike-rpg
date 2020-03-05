@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.29:
+
+Mar 4, 2020: Updated DungeonGenerator.cs class to add random room generator, and random generation for each room (via arrays).
+
 Update 1.28:
 
 Mar 3, 2020: Created TestCameraFollowPlayer.cs script in TestScript sub-folder to allow the camera to follow the player around the dungeon (versus a static camera).
