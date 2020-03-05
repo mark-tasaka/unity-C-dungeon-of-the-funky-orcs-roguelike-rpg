@@ -15,7 +15,11 @@ public class DungeonGenerator : MonoBehaviour
     public Color startColour, endColour;
 
     //number of rooms until the end
-    public int distanceToEnd;
+    //public int distanceToEnd;
+
+    //Range of Rooms generated
+    public int minRooms = 10, maxRooms = 20;
+    private int numberOfRoomsCreated;
 
     public Transform generatorPoint;
 
@@ -41,22 +45,29 @@ public class DungeonGenerator : MonoBehaviour
 
     public RoomCentre[] potentialCentres;
 
+
+    [Header("Room Arrays")]
+    public GameObject[] roomN;
+    public GameObject[] roomS;
+
     // Start is called before the first frame update
     void Start()
     {
+        numberOfRoomsCreated = Random.Range(minRooms, maxRooms);
+
         Instantiate(layoutRoom, generatorPoint.position, generatorPoint.rotation).GetComponent<SpriteRenderer>().color = startColour;
         selectedDirection = (Direction)Random.Range(0, 4);
 
         MoveGenerationPoint();
 
-        for (int i = 0; i < distanceToEnd; i++)
+        for (int i = 0; i < numberOfRoomsCreated; i++)
         {
             GameObject newRoom = Instantiate(layoutRoom, generatorPoint.position, generatorPoint.rotation);
 
             //Adding new rooms to the list
             layoutRoomObject.Add(newRoom);
 
-            if (i + 1 == distanceToEnd)
+            if (i + 1 == numberOfRoomsCreated)
             {
                 newRoom.GetComponent<SpriteRenderer>().color = endColour;
 
@@ -114,7 +125,10 @@ public class DungeonGenerator : MonoBehaviour
             {
                 int centreSelect = Random.Range(0, potentialCentres.Length);
 
-                Instantiate(potentialCentres[centreSelect], outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+                 Instantiate(potentialCentres[centreSelect], outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+
+
+               // Instantiate(potentialCentres[0], outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
             }
 
 
@@ -200,12 +214,18 @@ public class DungeonGenerator : MonoBehaviour
             case 1:
                 if (roomNorth)
                 {
-                    generatedOutlines.Add(Instantiate(rooms.north, roomPosition, transform.rotation));
+                    //generatedOutlines.Add(Instantiate(rooms.north, roomPosition, transform.rotation));
+                    int roomChoiceN = Random.Range(0, roomN.Length);
+                    generatedOutlines.Add(Instantiate(roomN[roomChoiceN], roomPosition, transform.rotation));
+
                 }
 
                 if (roomSouth)
                 {
-                    generatedOutlines.Add(Instantiate(rooms.south, roomPosition, transform.rotation));
+                    //generatedOutlines.Add(Instantiate(rooms.south, roomPosition, transform.rotation));
+                    int roomChoiceS = Random.Range(0, roomS.Length);
+                    generatedOutlines.Add(Instantiate(roomS[roomChoiceS], roomPosition, transform.rotation));
+
                 }
 
                 if (roomWest)
