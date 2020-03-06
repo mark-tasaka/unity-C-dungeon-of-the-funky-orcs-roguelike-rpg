@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.30:
+
+Mar 5, 2020: Modifications to the DungeonGenerator.cs class.
+
 Update 1.29:
 
 Mar 4, 2020: Updated DungeonGenerator.cs class to add random room generator, and random generation for each room (via arrays).
