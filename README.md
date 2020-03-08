@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.32:
+
+Mar 8, 2020: A new spritesheet (copperCoinsSpriteSheet) and accompanying animation added.
+
 Update 1.31:
 
 Mar 6, 2020: Updates to the DungeonGenerator.cs class.
