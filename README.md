@@ -6,6 +6,11 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+
+Update 1.34:
+
+Mar 10, 2020: Modificaitons to LevelManager.cs, PickUpCoin.cs and UIController.cs classes.
+
 Update 1.33.1:
 
 Mar 9, 2020: Six new animations added, which use the 'homebrew' custom coin Sprite Sheets (see update 1.33).  As well, two new classes were added to the Scripts folder: Chest.cs and PickUpCoin.cs.
