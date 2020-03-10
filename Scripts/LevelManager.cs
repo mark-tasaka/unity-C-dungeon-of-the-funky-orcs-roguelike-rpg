@@ -18,6 +18,10 @@ public class LevelManager : MonoBehaviour
     //is the Game Paused?
     public bool isPaused;
 
+    public int currentSilverCoins;
+
+    public int currentCopperCoins;
+
 
     private void Awake()
     {
@@ -30,6 +34,12 @@ public class LevelManager : MonoBehaviour
 
         //unpause game
         Time.timeScale = 1f;
+
+        currentSilverCoins = 0;
+        UIController.instance.silverCoinText.text = currentSilverCoins.ToString();
+
+        currentCopperCoins = 0;
+        UIController.instance.copperCoinText.text = currentCopperCoins.ToString();
 
     }
 
@@ -75,6 +85,21 @@ public class LevelManager : MonoBehaviour
             //unpause game
             Time.timeScale = 1f;
         }
+    }
+
+
+    public void GetSilverCoin(int amount)
+    {
+        currentSilverCoins += amount;
+
+        UIController.instance.silverCoinText.text = currentSilverCoins.ToString();
+    }
+
+    public void GetCopperCoin(int amount)
+    {
+        currentCopperCoins += amount;
+
+        UIController.instance.copperCoinText.text = currentCopperCoins.ToString();
     }
 
 }

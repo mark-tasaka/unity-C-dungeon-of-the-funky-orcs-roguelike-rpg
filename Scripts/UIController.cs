@@ -19,6 +19,8 @@ public class UIController : MonoBehaviour
     public Image fadeScreen;
     public float fadeSpeed;
     private bool fadeToBlack, fadeOutBlack;
+    
+    public Text silverCoinText, copperCoinText;
 
 
     public string newGameScene, mainMenuScene;

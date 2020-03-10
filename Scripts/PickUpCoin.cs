@@ -9,6 +9,8 @@ public class PickUpCoin : MonoBehaviour
 
     public float waitToBeCollected = 0.5f;
 
+    public bool isSilverCoin;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +29,30 @@ public class PickUpCoin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player" && waitToBeCollected <= 0f)
-        {
-            Destroy(gameObject);
 
-            AudioManager.instance.PlaySFX(0);
+        if (other.tag == "Player" && waitToBeCollected <= 0f)
+        {
+            if(isSilverCoin)
+            {
+                Destroy(gameObject);
+
+                AudioManager.instance.PlaySFX(0);
+
+                LevelManager.instance.GetSilverCoin(coinValue);
+
+            }
+            else
+            {
+                Destroy(gameObject);
+
+                AudioManager.instance.PlaySFX(0);
+
+                LevelManager.instance.GetCopperCoin(coinValue);
+
+            }
+
         }
+            
     }
 
     /*
