@@ -6,6 +6,11 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.33:
+
+Mar 9, 2020: Six new 'homebrew' custom coin Sprite Sheets added.
+
+
 Update 1.32:
 
 Mar 8, 2020: A new spritesheet (copperCoinsSpriteSheet) and accompanying animation added.
