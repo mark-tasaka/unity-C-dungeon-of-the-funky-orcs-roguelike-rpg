@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.33.1:
+
+Mar 9, 2020: Six new animations added, which use the 'homebrew' custom coin Sprite Sheets (see update 1.33).  As well, two new classes were added to the Scripts folder: Chest.cs and PickUpCoin.cs.
+
 Update 1.33:
 
 Mar 9, 2020: Six new 'homebrew' custom coin Sprite Sheets added.
