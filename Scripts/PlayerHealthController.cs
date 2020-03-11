@@ -14,6 +14,8 @@ public class PlayerHealthController : MonoBehaviour
 
     public int maxHitPoints;
 
+    public bool isStartGame;
+
 
     private void Awake()
     {
@@ -25,7 +27,17 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHitPoints = maxHitPoints;
+        if(isStartGame)
+        {
+            currentHitPoints = maxHitPoints;
+        }
+        else
+        {
+            maxHitPoints = CharacterTracker.instance.maxHP;
+            currentHitPoints = CharacterTracker.instance.currentHP;
+
+        }
+        
         UIController.instance.hitPointBar.maxValue = maxHitPoints;
         UIController.instance.hitPointBar.value = currentHitPoints;
         UIController.instance.hitPointText.text = "HP: " + currentHitPoints.ToString() + " / " + maxHitPoints.ToString();

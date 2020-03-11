@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/*Dungeon of the Funky Orcs
+ * A rogue-like RPG adventures designed by Mark Tasaka 2020
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -65,6 +65,13 @@ public class LevelManager : MonoBehaviour
         //wait in the middle of a coroutine
         yield return new WaitForSeconds(waitToLoad);
 
+        //To be carried over to the next dungeon level
+        CharacterTracker.instance.silverCoins = currentSilverCoins;
+        CharacterTracker.instance.copperCoins = currentCopperCoins;
+        CharacterTracker.instance.currentHP = PlayerHealthController.instance.currentHitPoints;
+        CharacterTracker.instance.maxHP = PlayerHealthController.instance.maxHitPoints;
+
+
         SceneManager.LoadScene(nextLevel);
     }
 

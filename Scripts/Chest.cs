@@ -9,6 +9,8 @@ public class Chest : MonoBehaviour
 {
     //public GunPickUp[] potentialGuns;
 
+    public PickUpCoin[] coinSelection;
+
     public SpriteRenderer theSR;
 
     public Sprite chestOpen;
@@ -35,9 +37,10 @@ public class Chest : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-               // int gunSelect = Random.Range(0, potentialGuns.Length);
+               int selectCoin = Random.Range(0, coinSelection.Length);
 
-               // Instantiate(potentialGuns[gunSelect], spawnPoint.position, spawnPoint.rotation);
+                Instantiate(coinSelection[selectCoin], spawnPoint.position, spawnPoint.rotation);
+                
 
                 theSR.sprite = chestOpen;
 
