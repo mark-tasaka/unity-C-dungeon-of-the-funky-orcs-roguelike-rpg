@@ -7,6 +7,11 @@
 Update Log:
 
 
+
+Update 1.35.1:
+
+Mar 11, 2020: Five new 'custom' graphics (pot pieces) have been added to the 'Custom Art' folder.  As well, the OrcPot.cs class was added, and the PickUpCoins.cs and Chest.cs classes were updated.
+
 Update 1.35:
 
 Mar 11, 2020: Creation of the CharacterTracker.cs class, and updated to the LevelManager.cs, PickUpCoin.cs and PlayerHealthController.cs classes.
