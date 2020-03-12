@@ -39,7 +39,7 @@ public class PickUpCoin : MonoBehaviour
             {
                 Destroy(gameObject);
 
-                AudioManager.instance.PlaySFX(0);
+                AudioManager.instance.PlaySFX(2);
 
                 LevelManager.instance.GetSilverCoin(coinValue);
 
@@ -48,7 +48,7 @@ public class PickUpCoin : MonoBehaviour
             {
                 Destroy(gameObject);
 
-                AudioManager.instance.PlaySFX(0);
+                AudioManager.instance.PlaySFX(3);
 
                 LevelManager.instance.GetCopperCoin(coinValue);
 

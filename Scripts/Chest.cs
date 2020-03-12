@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    //public GunPickUp[] potentialGuns;
 
     public PickUpCoin[] coinSelection;
 
