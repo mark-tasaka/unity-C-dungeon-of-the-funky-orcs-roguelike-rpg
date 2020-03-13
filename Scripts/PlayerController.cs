@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        //Do not destroy Player (target) object
+        DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
