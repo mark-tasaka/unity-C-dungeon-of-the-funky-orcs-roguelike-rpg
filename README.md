@@ -7,6 +7,10 @@
 Update Log:
 
 
+Update 1.36:
+
+Mar 12, 2020: Modifications to LevelManager.cs and PlayerController.cs classes.
+
 
 Update 1.35.1:
 
