@@ -6,6 +6,11 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+
+Update 1.38:
+
+Mar 14, 2020: The Custom Art folder has been updated with scanned paper and pencil sketches of 'chibi art style' orcs added to the MISC folder.
+
 Update 1.37:
 
 Mar 13, 2020: CharacterSelector.cs class added.
