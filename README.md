@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.40:
+
+Mar 16, 2020: Six new 'Potion' animations have been added.
+
 Update 1.39:
 
 Mar 15, 2020: A new SpriteSheets folder, named PotionSpriteSheets, has been added contained 6 'custom made' sprite sheets.
