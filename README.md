@@ -6,6 +6,9 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.39:
+
+Mar 15, 2020: A new SpriteSheets folder, named PotionSpriteSheets, has been added contained 6 'custom made' sprite sheets.
 
 Update 1.38:
 
