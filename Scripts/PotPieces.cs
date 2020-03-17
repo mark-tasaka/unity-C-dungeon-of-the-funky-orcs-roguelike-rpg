@@ -34,13 +34,7 @@ public class PotPieces : MonoBehaviour
 
         if (lifetime < 0f)
         {
-            theSR.color = new Color(theSR.color.r, theSR.color.g, theSR.color.b, Mathf.MoveTowards(theSR.color.a, 0f, fadeSpeed * Time.deltaTime));
-
-            if (theSR.color.a == 0f)
-            {
-                Destroy(gameObject);
-            }
-
+            Destroy(gameObject);
         }
     }
 }

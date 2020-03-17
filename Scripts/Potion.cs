@@ -5,57 +5,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpCoin : MonoBehaviour
+public class Potion : MonoBehaviour
 {
-
-    public int coinValue = 1;
+    public string potionName;
 
     public float waitToBeCollected = 0.1f;
 
-    public bool isSilverCoin;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (waitToBeCollected > 0f)
         {
             waitToBeCollected -= Time.deltaTime;
         }
+
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.tag == "Player" && waitToBeCollected <= 0f)
         {
-            if(isSilverCoin)
-            {
-                Destroy(gameObject);
 
-                AudioManager.instance.PlaySFX(2);
+            AudioManager.instance.PlaySFX(4);
 
-                LevelManager.instance.GetSilverCoin(coinValue);
+            Destroy(gameObject);
 
-            }
-            else
-            {
-                Destroy(gameObject);
-
-                AudioManager.instance.PlaySFX(3);
-
-                LevelManager.instance.GetCopperCoin(coinValue);
-
-            }
+            //Create Inventory.cs class to store potion
+            //Call instance of Inventory.cs for potion
 
         }
-            
     }
-    
 }
