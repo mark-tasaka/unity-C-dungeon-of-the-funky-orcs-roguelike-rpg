@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.40.1:
+
+Mar 16, 2020: Potion.cs and Inventory.cs classes added, and updates to PickUpCoin.cs and PotPieces.cs classes.
+
 Update 1.40:
 
 Mar 16, 2020: Six new 'Potion' animations have been added.
