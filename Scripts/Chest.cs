@@ -8,19 +8,23 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
 
-    public PickUpCoin[] coinSelection;
+    public Potion[] potionSelector;
 
     public SpriteRenderer theSR;
 
     public Sprite chestOpen;
 
-    public GameObject notificaiton;
+   // public GameObject notificaiton;
 
-    private bool canOpen, isOpen;
+    private bool canOpen;
 
     public Transform spawnPoint;
 
-    public float scaleSpeed = 2f;
+    public float setTimer = 2f;
+
+    public bool hasItem = true;
+
+    // public float scaleSpeed = 2f;
 
 
     // Start is called before the first frame update
@@ -32,50 +36,59 @@ public class Chest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canOpen && !isOpen)
+        if (canOpen)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-               int selectCoin = Random.Range(0, coinSelection.Length);
-
-                Instantiate(coinSelection[selectCoin], spawnPoint.position, spawnPoint.rotation);
-                
 
                 theSR.sprite = chestOpen;
 
-                isOpen = true;
+                if (hasItem)
+                {
+                    int selectItem = Random.Range(0, potionSelector.Length);
 
-                transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                    Instantiate(potionSelector[selectItem], spawnPoint.position, spawnPoint.rotation);
 
+                    hasItem = false;
+                }
+
+
+                //theSR.sprite = chestOpen;
+
+
+                setTimer -= Time.deltaTime;
+                
             }
         }
 
-        if (isOpen)
+
+        if (setTimer <= 0f)
+        {
+            Destroy(gameObject);
+        }
+
+        /*
+        if (canOpen)
         {
             transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.one, Time.deltaTime * scaleSpeed);
-        }
+        }*/
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            notificaiton.SetActive(true);
 
             canOpen = true;
         }
 
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    //Chest becomes invisible (obj destroyed) when it leaves the screen
+    private void OnBecameInvisible()
     {
-        if (other.tag == "Player")
-        {
-            notificaiton.SetActive(false);
-
-            canOpen = true;
-        }
-
+        Destroy(gameObject);
     }
 
 
