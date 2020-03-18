@@ -6,6 +6,11 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+
+Update 1.42:
+
+Mar 18, 2020: Modificaitons to the Chest.cs and OrcPots.cs classes.
+
 Update 1.41:
 
 Mar 17, 2020: Updates to Chest.cs class.
