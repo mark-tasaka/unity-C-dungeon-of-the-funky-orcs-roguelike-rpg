@@ -13,18 +13,15 @@ public class Chest : MonoBehaviour
     public SpriteRenderer theSR;
 
     public Sprite chestOpen;
-
-   // public GameObject notificaiton;
-
-    private bool canOpen;
+    
+    private bool canOpen, startTimer;
 
     public Transform spawnPoint;
 
-    public float setTimer = 2f;
+    public float timer = 2f;
 
     public bool hasItem = true;
-
-    // public float scaleSpeed = 2f;
+    
 
 
     // Start is called before the first frame update
@@ -43,35 +40,36 @@ public class Chest : MonoBehaviour
 
                 theSR.sprite = chestOpen;
 
+                AudioManager.instance.PlaySFX(5);
+
                 if (hasItem)
                 {
                     int selectItem = Random.Range(0, potionSelector.Length);
 
                     Instantiate(potionSelector[selectItem], spawnPoint.position, spawnPoint.rotation);
 
+                    //set to false as it will avoid respawning items each time mouse button pressed
                     hasItem = false;
                 }
 
+                startTimer = true;
 
-                //theSR.sprite = chestOpen;
-
-
-                setTimer -= Time.deltaTime;
+                //setTimer -= Time.deltaTime;
                 
             }
         }
+        
+        if(startTimer)
+        {
+            timer -= Time.deltaTime;
+        }
 
 
-        if (setTimer <= 0f)
+        if (timer <= 0.0f)
         {
             Destroy(gameObject);
         }
-
-        /*
-        if (canOpen)
-        {
-            transform.localScale = Vector3.MoveTowards(transform.localScale, Vector3.one, Time.deltaTime * scaleSpeed);
-        }*/
+        
     }
 
 
@@ -79,9 +77,18 @@ public class Chest : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
             canOpen = true;
         }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            canOpen = false;
+        }
+
 
     }
 

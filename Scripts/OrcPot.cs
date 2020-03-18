@@ -72,6 +72,16 @@ public class OrcPot : MonoBehaviour
 
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+
+            canSmash = false;
+        }
+
+    }
+
 
     //Pot becomes invisible (obj destroyed) when it leaves the screen
     private void OnBecameInvisible()
