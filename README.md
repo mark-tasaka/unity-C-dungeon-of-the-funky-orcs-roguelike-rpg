@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.41:
+
+Mar 17, 2020: Updates to Chest.cs class.
+
 Update 1.40.1:
 
 Mar 16, 2020: Potion.cs and Inventory.cs classes added, and updates to PickUpCoin.cs and PotPieces.cs classes.
