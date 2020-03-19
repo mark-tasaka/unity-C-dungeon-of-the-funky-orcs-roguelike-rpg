@@ -21,11 +21,13 @@ public class UIController : MonoBehaviour
     private bool fadeToBlack, fadeOutBlack;
     
     public Text silverCoinText, copperCoinText;
-
-
+    
     public string newGameScene, mainMenuScene;
 
     public GameObject pauseMenu;
+
+    //Inventory Panel
+    public GameObject inventoryPanel;
 
 
     private void Awake()
@@ -79,6 +81,8 @@ public class UIController : MonoBehaviour
         //unpause game
         Time.timeScale = 1f;
         SceneManager.LoadScene(newGameScene);
+
+        Destroy(PlayerController.instance.gameObject);
     }
 
     public void ReturnToMainMenu()
@@ -86,12 +90,25 @@ public class UIController : MonoBehaviour
         //unpause game
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuScene);
+
+        Destroy(PlayerController.instance.gameObject);
     }
 
     public void Resume()
     {
         LevelManager.instance.PauseUnpause();
 
+    }
+
+    public void OpenInventoryPanel()
+    {
+        inventoryPanel.SetActive(true);
+    }
+
+
+    public void CloseInventoryPanel()
+    {
+        inventoryPanel.SetActive(false);
     }
 
 }

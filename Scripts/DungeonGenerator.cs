@@ -159,6 +159,9 @@ public class DungeonGenerator : MonoBehaviour
 #if UNITY_EDITOR
         if (Input.GetKey(KeyCode.R))
         {
+
+            Destroy(PlayerController.instance.gameObject);
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 #endif
