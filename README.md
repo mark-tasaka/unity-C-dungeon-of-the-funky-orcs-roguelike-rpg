@@ -6,6 +6,9 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.43:
+
+Mar 19, 2020: More functionality added to the UIController.cs and DungeonGenerator.cs classes.
 
 Update 1.42:
 
