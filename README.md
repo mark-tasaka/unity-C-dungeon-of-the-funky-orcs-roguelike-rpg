@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.44:
+
+Mar 20, 2020: UI png graphics, designed in Photoshop, have been added to the MISC folder in Custom Art.
+
 Update 1.43:
 
 Mar 19, 2020: More functionality added to the UIController.cs and DungeonGenerator.cs classes.
