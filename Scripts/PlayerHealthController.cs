@@ -10,9 +10,11 @@ public class PlayerHealthController : MonoBehaviour
 
     public static PlayerHealthController instance;
 
+    [HideInInspector]
     public int currentHitPoints;
 
-    public int maxHitPoints;
+    [HideInInspector]
+    public int maxHP;
 
     public bool isStartGame;
 
@@ -29,18 +31,19 @@ public class PlayerHealthController : MonoBehaviour
     {
         if(isStartGame)
         {
-            currentHitPoints = maxHitPoints;
+            maxHP = PlayerStatisticsController.instance.maxHitPoints;
+            currentHitPoints = maxHP;
         }
         else
         {
-            maxHitPoints = CharacterTracker.instance.maxHP;
+            maxHP = CharacterTracker.instance.maxHP;
             currentHitPoints = CharacterTracker.instance.currentHP;
 
         }
         
-        UIController.instance.hitPointBar.maxValue = maxHitPoints;
+        UIController.instance.hitPointBar.maxValue = maxHP;
         UIController.instance.hitPointBar.value = currentHitPoints;
-        UIController.instance.hitPointText.text = "HP: " + currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
+        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHP.ToString();
 
     }
 
@@ -56,7 +59,7 @@ public class PlayerHealthController : MonoBehaviour
         currentHitPoints -= 3;
 
         UIController.instance.hitPointBar.value = currentHitPoints;
-        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
+        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHP.ToString();
         
     }
 
@@ -68,10 +71,11 @@ public class PlayerHealthController : MonoBehaviour
         {
             currentHitPoints += 2;
 
-            if (currentHitPoints > maxHitPoints)
+            if (currentHitPoints > maxHP)
             {
-                currentHitPoints = maxHitPoints;
+                currentHitPoints = maxHP;
             }
+                
         }
 
         if(fungi == false)
@@ -80,7 +84,7 @@ public class PlayerHealthController : MonoBehaviour
         }
 
         UIController.instance.hitPointBar.value = currentHitPoints;
-        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
+        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHP.ToString();
     }
 
     //Effects of the fungus spores the players walks into
