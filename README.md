@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.45:
+
+Mar 21, 2020: 'Deprecated' Folder created to deal with 'decrpecated' classes.  PlayerHealthController.cs moved to 'Deprecated' Folder, as the PlayerStatisticsController.cs class replaces this class.  Updates to Fungus.cs, LevelManager.cs and PlayerStatisticsController.cs classes. 
+
 Update 1.44:
 
 Mar 20, 2020: New PlayerStatisticsController.cs class created and modifications to PlayerHealthController.cs and CharacterTracter.cs classes.
