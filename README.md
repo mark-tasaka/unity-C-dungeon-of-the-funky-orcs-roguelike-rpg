@@ -8,6 +8,10 @@ Update Log:
 
 Update 1.44:
 
+Mar 20, 2020: New PlayerStatisticsController.cs class created and modifications to PlayerHealthController.cs and CharacterTracter.cs classes.
+
+Update 1.44:
+
 Mar 20, 2020: UI png graphics, designed in Photoshop, have been added to the MISC folder in Custom Art.
 
 Update 1.43:
