@@ -21,8 +21,7 @@ public class TestCameraFollowPlayer : MonoBehaviour
         transform.position = new Vector3(playerCharacter.position.x, playerCharacter.position.y, transform.position.z);
     }
     */
-
-        
+    
     private void LateUpdate()
     {
         transform.position = new Vector3(playerCharacter.position.x, playerCharacter.position.y, transform.position.z);

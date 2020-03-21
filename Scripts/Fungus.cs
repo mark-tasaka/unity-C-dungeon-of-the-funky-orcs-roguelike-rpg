@@ -46,12 +46,12 @@ public class Fungus : MonoBehaviour
 
             int die = Random.Range(1, 4);
 
-            if(die <3)
+            if (die < 3)
             {
                 isGoodFungus = true;
 
                 //Fungus Effect
-                PlayerHealthController.instance.FungusEffect(isGoodFungus);
+                FungusEffect(isGoodFungus);
 
                 int piecesToDrop = Random.Range(minPieces, maxPieces);
 
@@ -79,7 +79,7 @@ public class Fungus : MonoBehaviour
                 }
 
             }
-            
+
         }
     }
 
@@ -87,5 +87,35 @@ public class Fungus : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+
     }
+
+
+
+
+
+    public void FungusEffect(bool fungi)
+    {
+
+        if (fungi == true)
+        {
+            PlayerStatisticsController.instance.currentHitPoints += 2;
+
+            if (PlayerStatisticsController.instance.currentHitPoints > PlayerStatisticsController.instance.maxHitPoints)
+            {
+                PlayerStatisticsController.instance.currentHitPoints = PlayerStatisticsController.instance.maxHitPoints;
+            }
+
+        }
+
+        if (fungi == false)
+        {
+            PlayerStatisticsController.instance.currentHitPoints -= 1;
+        }
+
+        UIController.instance.hitPointBar.value = PlayerStatisticsController.instance.currentHitPoints;
+        UIController.instance.hitPointText.text = PlayerStatisticsController.instance.currentHitPoints.ToString() + " / " + PlayerStatisticsController.instance.maxHitPoints.ToString();
+    }
+
+
 }

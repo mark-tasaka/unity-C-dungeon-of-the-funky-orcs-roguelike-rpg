@@ -72,8 +72,8 @@ public class LevelManager : MonoBehaviour
         //To be carried over to the next dungeon level
         CharacterTracker.instance.silverCoins = currentSilverCoins;
         CharacterTracker.instance.copperCoins = currentCopperCoins;
-        CharacterTracker.instance.currentHP = PlayerHealthController.instance.currentHitPoints;
-        CharacterTracker.instance.maxHP = PlayerHealthController.instance.maxHitPoints;
+        CharacterTracker.instance.currentHP = PlayerStatisticsController.instance.currentHitPoints;
+        CharacterTracker.instance.maxHP = PlayerStatisticsController.instance.maxHitPoints;
 
 
         SceneManager.LoadScene(nextLevel);

@@ -13,8 +13,13 @@ public class PlayerStatisticsController : MonoBehaviour
     
     [HideInInspector]
     public int maxHitPoints;
-    
+
+    [HideInInspector]
+    public int currentHitPoints;
+
     private int baseHitPoints;
+
+    public bool isStartGame;
 
     private void Awake()
     {
@@ -27,6 +32,22 @@ public class PlayerStatisticsController : MonoBehaviour
         baseHitPoints = BaseHitPoints();
 
         maxHitPoints = GetMaxHitPoints(characterLevel, baseHitPoints);
+
+        if (isStartGame)
+        {
+            maxHitPoints = PlayerStatisticsController.instance.maxHitPoints;
+            currentHitPoints = maxHitPoints;
+        }
+        else
+        {
+            maxHitPoints = CharacterTracker.instance.maxHP;
+            currentHitPoints = CharacterTracker.instance.currentHP;
+
+        }
+
+        UIController.instance.hitPointBar.maxValue = maxHitPoints;
+        UIController.instance.hitPointBar.value = currentHitPoints;
+        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
 
 
     }
@@ -46,14 +67,40 @@ public class PlayerStatisticsController : MonoBehaviour
 
     public int GetMaxHitPoints(int level, int baseHP)
     {
-        int maxHP = 0;
+        int maxHitPoints = 0;
 
         if (level == 1)
         {
-            maxHP = baseHP;
+            maxHitPoints = baseHP;
         }
 
-        return maxHP;
+        return maxHitPoints;
     }
+
+    /*
+    public void FungusEffect(bool fungi)
+    {
+
+        if (fungi == true)
+        {
+            currentHitPoints += 2;
+
+            if (currentHitPoints > maxHitPoints)
+            {
+                currentHitPoints = maxHitPoints;
+            }
+
+        }
+
+        if (fungi == false)
+        {
+            currentHitPoints -= 1;
+        }
+
+        UIController.instance.hitPointBar.value = currentHitPoints;
+        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
+    }
+    */
+
 
 }
