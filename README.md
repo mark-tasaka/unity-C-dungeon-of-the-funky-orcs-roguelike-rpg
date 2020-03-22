@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.45.1:
+
+Mar 21, 2020: Creation of ExperiencePointManager.cs class, and updates to PlayerStatisticController.cs, PickUpCoin.cs, LevelManager.cs and CharacterTracker.cs classes.
+
 Update 1.45:
 
 Mar 21, 2020: 'Deprecated' Folder created to deal with 'decrpecated' classes.  PlayerHealthController.cs moved to 'Deprecated' Folder, as the PlayerStatisticsController.cs class replaces this class.  Updates to Fungus.cs, LevelManager.cs and PlayerStatisticsController.cs classes. 
