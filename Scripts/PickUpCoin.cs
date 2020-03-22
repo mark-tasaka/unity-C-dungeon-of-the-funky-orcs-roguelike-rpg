@@ -52,7 +52,7 @@ public class PickUpCoin : MonoBehaviour
 
                 LevelManager.instance.GetSilverCoin(coinValue);
 
-                ExperiencePointManager.instance.GetXP(xp);
+                LevelManager.instance.GetXP(xp);
                 
                 
 
@@ -65,7 +65,7 @@ public class PickUpCoin : MonoBehaviour
 
                 LevelManager.instance.GetCopperCoin(coinValue);
 
-                ExperiencePointManager.instance.GetXP(xp);
+                LevelManager.instance.GetXP(xp);
 
 
             }

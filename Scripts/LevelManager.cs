@@ -22,6 +22,8 @@ public class LevelManager : MonoBehaviour
 
     public int currentCopperCoins;
 
+    public int currentXP;
+
     public Transform startPoint;
 
     private void Awake()
@@ -44,6 +46,9 @@ public class LevelManager : MonoBehaviour
 
         currentCopperCoins = 0;
         UIController.instance.copperCoinText.text = currentCopperCoins.ToString();
+
+        currentXP = PlayerStatisticsController.instance.experiencePoints;
+        UIController.instance.xPoints.text = currentXP.ToString();
 
     }
 
@@ -114,6 +119,15 @@ public class LevelManager : MonoBehaviour
         currentCopperCoins += amount;
 
         UIController.instance.copperCoinText.text = currentCopperCoins.ToString();
+    }
+
+
+    public void GetXP(int xp)
+    {
+
+        currentXP += xp;
+
+        UIController.instance.xPoints.text = currentXP.ToString();
     }
 
 }
