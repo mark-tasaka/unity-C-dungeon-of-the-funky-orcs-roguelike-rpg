@@ -16,6 +16,12 @@ public class CharacterTracker : MonoBehaviour
     //coins
     public int silverCoins, copperCoins;
 
+    //experience points
+    public int experiencePoints;
+
+    //Character Level
+    public int characterLevel;
+
 
     private void Awake()
     {

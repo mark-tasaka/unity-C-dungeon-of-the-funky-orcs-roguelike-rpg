@@ -13,8 +13,13 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
     public static UIController instance;
+
     public Slider hitPointBar;
     public Text hitPointText;
+
+    public Text xPoints;
+
+    public Text characterLevel;
 
     public Image fadeScreen;
     public float fadeSpeed;

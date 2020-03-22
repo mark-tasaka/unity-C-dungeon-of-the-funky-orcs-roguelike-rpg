@@ -9,7 +9,9 @@ public class PlayerStatisticsController : MonoBehaviour
 {
     public static PlayerStatisticsController instance;
 
-    public int characterLevel = 1;
+    public int characterLevel;
+
+    public int experiencePoints;
     
     [HideInInspector]
     public int maxHitPoints;
@@ -49,6 +51,28 @@ public class PlayerStatisticsController : MonoBehaviour
         UIController.instance.hitPointBar.value = currentHitPoints;
         UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
 
+        //Experience Points
+        if(isStartGame)
+        {
+            experiencePoints = 0;
+        }
+        else
+        {
+            experiencePoints = CharacterTracker.instance.experiencePoints;
+        }
+        UIController.instance.xPoints.text = experiencePoints.ToString();
+
+        //CharacterLevel
+        if (isStartGame)
+        {
+            characterLevel = 1;
+        }
+        else
+        {
+            characterLevel = CharacterTracker.instance.characterLevel;
+        }
+        UIController.instance.characterLevel.text = "Lv: " + characterLevel.ToString();
+
 
     }
 
@@ -77,30 +101,7 @@ public class PlayerStatisticsController : MonoBehaviour
         return maxHitPoints;
     }
 
-    /*
-    public void FungusEffect(bool fungi)
-    {
 
-        if (fungi == true)
-        {
-            currentHitPoints += 2;
-
-            if (currentHitPoints > maxHitPoints)
-            {
-                currentHitPoints = maxHitPoints;
-            }
-
-        }
-
-        if (fungi == false)
-        {
-            currentHitPoints -= 1;
-        }
-
-        UIController.instance.hitPointBar.value = currentHitPoints;
-        UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
-    }
-    */
 
 
 }

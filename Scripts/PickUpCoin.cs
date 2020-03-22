@@ -7,12 +7,21 @@ using UnityEngine;
 
 public class PickUpCoin : MonoBehaviour
 {
+    public static PickUpCoin instance;
 
     public int coinValue = 1;
+
+    public int xp = 1;
 
     public float waitToBeCollected = 0.1f;
 
     public bool isSilverCoin;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +52,10 @@ public class PickUpCoin : MonoBehaviour
 
                 LevelManager.instance.GetSilverCoin(coinValue);
 
+                ExperiencePointManager.instance.GetXP(xp);
+                
+                
+
             }
             else
             {
@@ -51,6 +64,9 @@ public class PickUpCoin : MonoBehaviour
                 AudioManager.instance.PlaySFX(3);
 
                 LevelManager.instance.GetCopperCoin(coinValue);
+
+                ExperiencePointManager.instance.GetXP(xp);
+
 
             }
 

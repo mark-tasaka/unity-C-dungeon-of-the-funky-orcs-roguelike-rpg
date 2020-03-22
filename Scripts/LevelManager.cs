@@ -70,12 +70,15 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitToLoad);
 
         //To be carried over to the next dungeon level
-        CharacterTracker.instance.silverCoins = currentSilverCoins;
-        CharacterTracker.instance.copperCoins = currentCopperCoins;
+        //Character Stats
+        CharacterTracker.instance.characterLevel = PlayerStatisticsController.instance.characterLevel;
+        CharacterTracker.instance.experiencePoints = PlayerStatisticsController.instance.experiencePoints;
         CharacterTracker.instance.currentHP = PlayerStatisticsController.instance.currentHitPoints;
         CharacterTracker.instance.maxHP = PlayerStatisticsController.instance.maxHitPoints;
-
-
+        //Character Items
+        CharacterTracker.instance.silverCoins = currentSilverCoins;
+        CharacterTracker.instance.copperCoins = currentCopperCoins;
+        
         SceneManager.LoadScene(nextLevel);
     }
 

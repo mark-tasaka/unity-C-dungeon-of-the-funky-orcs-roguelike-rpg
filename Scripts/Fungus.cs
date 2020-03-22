@@ -66,7 +66,7 @@ public class Fungus : MonoBehaviour
             else
             {
                 //Fungus Effect
-                PlayerHealthController.instance.FungusEffect(isGoodFungus);
+                FungusEffect(isGoodFungus);
 
                 int piecesToDrop = Random.Range(minPieces, maxPieces);
 
