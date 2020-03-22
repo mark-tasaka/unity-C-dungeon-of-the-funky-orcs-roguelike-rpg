@@ -6,6 +6,11 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.45.2:
+
+Mar 21, 2020: Orc pixel art added to a new 'Orc Pixel Samples' folder (under MISC in Custom Art Folder).  Orc pixel art created with Adobe Photoshop.
+
+
 Update 1.45.1:
 
 Mar 21, 2020: Creation of ExperiencePointManager.cs class, and updates to PlayerStatisticController.cs, PickUpCoin.cs, LevelManager.cs and CharacterTracker.cs classes.
