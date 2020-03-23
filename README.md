@@ -6,6 +6,11 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+
+Update 1.46.1:
+
+Mar 22, 2020: The creation of Weapon.cs class and updates to PickUpCoin.cs, Chest.cs and UIController.cs classes.  New sprites added, includes new spriteSheet for practiceSword.  New animation practiceSword.anim) added.
+
 Update 1.46:
 
 Mar 22, 2020: ExperiencePointManager.cs class moved to 'Deprecated' Folder, and functionality of ExperiencePointManager.cs class added to LevelManager.cs class.
