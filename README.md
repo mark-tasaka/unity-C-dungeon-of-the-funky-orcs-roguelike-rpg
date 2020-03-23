@@ -7,6 +7,10 @@
 Update Log:
 
 
+Update 1.47:
+
+Mar 23, 2020: New graphics have been added to the 'Custom Art' Folder, which includes Orc pixel art and a promotional card.
+
 Update 1.46.1:
 
 Mar 22, 2020: The creation of Weapon.cs class and updates to PickUpCoin.cs, Chest.cs and UIController.cs classes.  New sprites added, includes new spriteSheet for practiceSword.  New animation practiceSword.anim) added.
