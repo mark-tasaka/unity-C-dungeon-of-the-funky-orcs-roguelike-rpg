@@ -21,6 +21,8 @@ public class UIController : MonoBehaviour
 
     public Text characterLevel;
 
+    public Text xpGained;
+
     public Image fadeScreen;
     public float fadeSpeed;
     private bool fadeToBlack, fadeOutBlack;
@@ -34,6 +36,9 @@ public class UIController : MonoBehaviour
     //Inventory Panel
     public GameObject inventoryPanel;
 
+    //Experience Points Pop up Panel
+    public GameObject xpPanel;
+
 
     private void Awake()
     {
@@ -45,6 +50,7 @@ public class UIController : MonoBehaviour
     {
         fadeOutBlack = true;
         fadeToBlack = false;
+
     }
 
     // Update is called once per frame

@@ -17,6 +17,11 @@ public class PickUpCoin : MonoBehaviour
 
     public bool isSilverCoin;
 
+    //Fix this issue
+    public float xpPanelLive = 1f;
+    private bool startTimer;
+
+
     private void Awake()
     {
         instance = this;
@@ -37,6 +42,21 @@ public class PickUpCoin : MonoBehaviour
         {
             waitToBeCollected -= Time.deltaTime;
         }
+
+        if(startTimer)
+        {
+            xpPanelLive -= Time.deltaTime;
+        }
+
+        if(xpPanelLive <= 0f)
+        {
+            UIController.instance.xpPanel.SetActive(false);
+
+            startTimer = false;
+            xpPanelLive = 1f;
+        }
+        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -44,7 +64,8 @@ public class PickUpCoin : MonoBehaviour
 
         if (other.tag == "Player" && waitToBeCollected <= 0f)
         {
-            if(isSilverCoin)
+            
+            if (isSilverCoin)
             {
                 Destroy(gameObject);
 
@@ -53,7 +74,10 @@ public class PickUpCoin : MonoBehaviour
                 LevelManager.instance.GetSilverCoin(coinValue);
 
                 LevelManager.instance.GetXP(xp);
-                
+
+                startTimer = true;
+                UIController.instance.xpPanel.SetActive(true);
+                UIController.instance.xpGained.text = "+" + xp.ToString() + " XP";
                 
 
             }
@@ -67,6 +91,9 @@ public class PickUpCoin : MonoBehaviour
 
                 LevelManager.instance.GetXP(xp);
 
+                startTimer = true;
+                UIController.instance.xpPanel.SetActive(true);
+                UIController.instance.xpGained.text = "+" + xp.ToString() + " XP";
 
             }
 

@@ -53,8 +53,7 @@ public class Chest : MonoBehaviour
                 }
 
                 startTimer = true;
-
-                //setTimer -= Time.deltaTime;
+                
                 
             }
         }
