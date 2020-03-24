@@ -7,6 +7,11 @@
 Update Log:
 
 
+
+Update 1.48:
+
+Mar 24, 2020: A new sprite sheet (BronzeShortSword) and animation for the sprite sheet added.
+
 Update 1.47:
 
 Mar 23, 2020: New graphics have been added to the 'Custom Art' Folder, which includes Orc pixel art and a promotional card.
