@@ -23,6 +23,10 @@ public class PlayerStatisticsController : MonoBehaviour
 
     public bool isStartGame;
 
+    public int weaponRanking;
+
+    public GameObject weapon;
+
     private void Awake()
     {
         instance = this;
@@ -73,6 +77,17 @@ public class PlayerStatisticsController : MonoBehaviour
         }
         UIController.instance.characterLevel.text = "Lv: " + characterLevel.ToString();
 
+        if(isStartGame)
+        {
+            weaponRanking = 0;
+        }
+        else
+        {
+            weaponRanking = CharacterTracker.instance.characterWeaponRank;
+        }
+        weapon = GetWeapon(weaponRanking);
+        //UIController.instance.weaponDamageMainScreen.text =  ccc ;
+
 
     }
 
@@ -99,6 +114,14 @@ public class PlayerStatisticsController : MonoBehaviour
         }
 
         return maxHitPoints;
+    }
+
+
+   public GameObject GetWeapon(int ranking)
+    {
+        weapon = InventoryManager.instance.weapons[ranking];
+
+        return weapon;
     }
 
 

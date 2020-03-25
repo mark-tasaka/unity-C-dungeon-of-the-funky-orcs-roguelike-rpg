@@ -33,6 +33,9 @@ public class UIController : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public Text weaponDamageMainScreen, weaponNameInventory;
+    
+
     //Inventory Panel
     public GameObject inventoryPanel;
 

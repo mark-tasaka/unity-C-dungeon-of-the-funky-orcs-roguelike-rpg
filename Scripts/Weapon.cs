@@ -15,7 +15,9 @@ public class Weapon : MonoBehaviour
 
     public string weaponStats;
 
-    public string shortDescription;
+    //public string shortDescription;
+
+    public int xp;
 
     public string longDescription;
 

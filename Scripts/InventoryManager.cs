@@ -5,24 +5,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
-    //CLASS MY BE UNNECESSARY.  FUNCTIONALITY MAY BE BEST FOR PlayerStatisticsController.cs
 
+    public static InventoryManager instance;
 
-    //store Player items, weapons, armour
+    public GameObject[] weapons;
 
-    public static Inventory instance;
-
-    //public GameObject weapon = InventoryManager.instance.weapons[0];
-    
 
     private void Awake()
     {
         instance = this;
     }
-
-
     // Start is called before the first frame update
     void Start()
     {

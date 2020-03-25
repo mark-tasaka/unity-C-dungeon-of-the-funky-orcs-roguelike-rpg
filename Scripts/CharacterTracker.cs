@@ -22,6 +22,8 @@ public class CharacterTracker : MonoBehaviour
     //Character Level
     public int characterLevel;
 
+    public int characterWeaponRank;
+
 
     private void Awake()
     {
