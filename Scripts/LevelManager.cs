@@ -83,6 +83,9 @@ public class LevelManager : MonoBehaviour
         //Character Items
         CharacterTracker.instance.silverCoins = currentSilverCoins;
         CharacterTracker.instance.copperCoins = currentCopperCoins;
+
+        CharacterTracker.instance.characterLevel = PlayerStatisticsController.instance.characterLevel;
+        CharacterTracker.instance.characterWeaponRank = PlayerStatisticsController.instance.weaponRanking;
         
         SceneManager.LoadScene(nextLevel);
     }

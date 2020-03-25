@@ -27,6 +27,8 @@ public class PlayerStatisticsController : MonoBehaviour
 
     public GameObject weapon;
 
+    public string weaponName;
+
     private void Awake()
     {
         instance = this;
@@ -77,6 +79,10 @@ public class PlayerStatisticsController : MonoBehaviour
         }
         UIController.instance.characterLevel.text = "Lv: " + characterLevel.ToString();
 
+        weapon = InventoryManager.instance.weapons[weaponRanking];
+        
+
+        /*
         if(isStartGame)
         {
             weaponRanking = 0;
@@ -86,7 +92,15 @@ public class PlayerStatisticsController : MonoBehaviour
             weaponRanking = CharacterTracker.instance.characterWeaponRank;
         }
         weapon = GetWeapon(weaponRanking);
-        //UIController.instance.weaponDamageMainScreen.text =  ccc ;
+
+        UIController.instance.weaponDamageMainScreen.text = Weapon.instance.WeaponStats;
+        */
+
+        //Use Temporary until figure out solution
+        /*
+        string weaponName = 
+        UIController.instance.weaponDamageMainScreen.text =
+        */
 
 
     }

@@ -14,6 +14,15 @@ public class Weapon : MonoBehaviour
     public string weaponName;
 
     public string weaponStats;
+    
+        /*
+    public string WeaponStats
+    {
+        get { return WeaponStats; }
+        set { WeaponStats = WeaponStats; }
+    }*/
+
+   // public string WeaponStats { get; set; }
 
     //public string shortDescription;
 
@@ -30,6 +39,15 @@ public class Weapon : MonoBehaviour
     public int minCritDamage;
 
     public int maxCritDamage;
+
+
+    //Ctor
+    /*
+    public Weapon(string weaponStat)
+    {
+        WeaponStats = weaponStat;
+    }
+    */
 
     private void Awake()
     {
