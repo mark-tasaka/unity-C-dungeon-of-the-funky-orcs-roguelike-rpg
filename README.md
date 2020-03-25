@@ -8,6 +8,10 @@ Update Log:
 
 
 
+Update 1.48.1:
+
+Mar 24, 2020: Two new animations (IronShortSword and SteelShortSword) have been added, along with related spriteSheets.  A new class (InventoryManager.cs) has been created, and updates to classes PlayerStatisticsController.cs, UIController.cs, CharacterTracker.cs and Inventory.cs.
+
 Update 1.48:
 
 Mar 24, 2020: A new sprite sheet (BronzeShortSword) and animation for the sprite sheet added.
