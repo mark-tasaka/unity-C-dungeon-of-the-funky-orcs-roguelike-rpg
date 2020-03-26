@@ -23,11 +23,16 @@ public class PlayerStatisticsController : MonoBehaviour
 
     public bool isStartGame;
 
-    public int weaponRanking;
+    public int weaponRanking = 0;
 
-    public GameObject weapon;
 
-    public string weaponName;
+    [Header("Character's Weapon:")]
+    public GameObject Currentweapon;
+    public GameObject[] weaponsArray;
+    private string weaponName;
+    //private SpriteRenderer weaponIcon;
+
+
 
     private void Awake()
     {
@@ -79,9 +84,7 @@ public class PlayerStatisticsController : MonoBehaviour
         }
         UIController.instance.characterLevel.text = "Lv: " + characterLevel.ToString();
 
-        weapon = InventoryManager.instance.weapons[weaponRanking];
         
-
         /*
         if(isStartGame)
         {
@@ -91,16 +94,17 @@ public class PlayerStatisticsController : MonoBehaviour
         {
             weaponRanking = CharacterTracker.instance.characterWeaponRank;
         }
-        weapon = GetWeapon(weaponRanking);
-
-        UIController.instance.weaponDamageMainScreen.text = Weapon.instance.WeaponStats;
         */
 
-        //Use Temporary until figure out solution
-        /*
-        string weaponName = 
-        UIController.instance.weaponDamageMainScreen.text =
-        */
+        Currentweapon = weaponsArray[weaponRanking];
+
+        //weaponIcon = Currentweapon.GetComponent<Weapon>().inventoryDisplay;
+
+        weaponName = Currentweapon.GetComponent<Weapon>().weaponName;
+
+        //UIController.instance.weaponIcon.sprite = weaponIcon.sprite;
+
+        UIController.instance.weaponDamageMainScreen.text = weaponName.ToString();
 
 
     }
@@ -129,14 +133,7 @@ public class PlayerStatisticsController : MonoBehaviour
 
         return maxHitPoints;
     }
-
-
-   public GameObject GetWeapon(int ranking)
-    {
-        weapon = InventoryManager.instance.weapons[ranking];
-
-        return weapon;
-    }
+    
 
 
 
