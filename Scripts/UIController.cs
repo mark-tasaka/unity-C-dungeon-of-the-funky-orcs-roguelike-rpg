@@ -35,7 +35,7 @@ public class UIController : MonoBehaviour
 
     public Text weaponDamageMainScreen, weaponNameInventory;
 
-    //public Image weaponIcon;
+    public Image weaponIcon;
     
 
     //Inventory Panel

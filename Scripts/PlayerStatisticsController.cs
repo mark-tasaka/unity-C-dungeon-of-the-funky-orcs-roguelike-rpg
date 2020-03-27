@@ -4,6 +4,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Library for UI elements
+using UnityEngine.UI;
 
 public class PlayerStatisticsController : MonoBehaviour
 {
@@ -27,10 +29,11 @@ public class PlayerStatisticsController : MonoBehaviour
 
 
     [Header("Character's Weapon:")]
-    public GameObject Currentweapon;
+    private GameObject currentWeapon;
     public GameObject[] weaponsArray;
     private string weaponName;
-    //private SpriteRenderer weaponIcon;
+
+    private SpriteRenderer weaponIcon;
 
 
 
@@ -96,13 +99,15 @@ public class PlayerStatisticsController : MonoBehaviour
         }
         */
 
-        Currentweapon = weaponsArray[weaponRanking];
+        currentWeapon = weaponsArray[weaponRanking];
 
-        //weaponIcon = Currentweapon.GetComponent<Weapon>().inventoryDisplay;
+        //weaponIcon = currentWeapon.GetComponent<Weapon>().inventoryDisplay;
 
-        weaponName = Currentweapon.GetComponent<Weapon>().weaponName;
+        weaponName = currentWeapon.GetComponent<Weapon>().weaponName;
 
-        //UIController.instance.weaponIcon.sprite = weaponIcon.sprite;
+        weaponIcon = currentWeapon.GetComponent<Weapon>().inventoryDisplay;
+
+        UIController.instance.weaponIcon.sprite = weaponIcon.sprite;
 
         UIController.instance.weaponDamageMainScreen.text = weaponName.ToString();
 
