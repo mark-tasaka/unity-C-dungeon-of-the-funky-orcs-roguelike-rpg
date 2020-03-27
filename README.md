@@ -7,6 +7,11 @@
 Update Log:
 
 
+
+Update 1.50:
+
+Mar 26, 2020: Further updates to UIController.cs, PlayerStatisticsController.cs and Weapons.cs classes.
+
 Update 1.49.1:
 
 Mar 25, 2020: Updates to UIController.cs, PlayerStatisticsController.cs and Weapons.cs classes.
