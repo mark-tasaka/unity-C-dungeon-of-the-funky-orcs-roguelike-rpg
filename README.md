@@ -7,6 +7,9 @@
 Update Log:
 
 
+Update 1.51:
+
+Mar 27, 2020: A new 'Customer Art' folder, titled 'WeaponsUI', had been added containing graphics (practice sword, bronze sword, iron sword and steel sword) for the weapons as they will appear in the UI screen and the Inventory menue.
 
 Update 1.50:
 
