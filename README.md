@@ -7,9 +7,13 @@
 Update Log:
 
 
+Update 1.53:
+
+Mar 29, 2020: New spriteSheets and graphics added to the 'Custome Art' folder.
+
 Update 1.52:
 
-Mar 28, 2020: New 'shield UI/Inventory' art added to the Customer Art folder.
+Mar 28, 2020: New 'shield UI/Inventory' art added to the 'Custome Art' folder.
 
 Mar 27, 2020: A new 'Customer Art' folder, titled 'WeaponsUI', had been added containing graphics (practice sword, bronze sword, iron sword and steel sword) for the weapons as they will appear in the UI screen and the Inventory menue.
 
