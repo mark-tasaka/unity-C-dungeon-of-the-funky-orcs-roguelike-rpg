@@ -7,6 +7,10 @@
 Update Log:
 
 
+Update 1.54:
+
+Mar 30, 2020: A new animation folder (Shields) has been created containing two new animations (Footman's Shield anim and Squire's Shield anim).
+
 Update 1.53:
 
 Mar 29, 2020: New spriteSheets and graphics added to the 'Custome Art' folder.
