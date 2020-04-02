@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.56:
+
+Apr 1, 2020: LifeIcon.cs class added.  Updates to PlayerStatisticsController.cs, UIController.cs and Weapons.cs classes.  New UI graphics (life icons) added to the 'Custom Art' folder.
+
 Update 1.55:
 
 Mar 31, 2020: Shield.cs class added.
