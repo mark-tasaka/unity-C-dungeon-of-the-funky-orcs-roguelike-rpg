@@ -29,12 +29,16 @@ public class PlayerStatisticsController : MonoBehaviour
 
 
     [Header("Character's Weapon:")]
-    private GameObject currentWeapon;
     public GameObject[] weaponsArray;
+    private GameObject currentWeapon;
     private string weaponName;
-
     private SpriteRenderer weaponIcon;
 
+
+    [Header("UI Life")]
+    public GameObject[] lifeArray;
+    public int lifeElementCounter = 0;
+    private SpriteRenderer currentLifeIcon;
 
 
     private void Awake()
@@ -45,6 +49,7 @@ public class PlayerStatisticsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         baseHitPoints = BaseHitPoints();
 
         maxHitPoints = GetMaxHitPoints(characterLevel, baseHitPoints);
@@ -60,6 +65,10 @@ public class PlayerStatisticsController : MonoBehaviour
             currentHitPoints = CharacterTracker.instance.currentHP;
 
         }
+
+        lifeElementCounter = LifeIcon(currentHitPoints, maxHitPoints);
+       // currentLifeIcon.sprite = lifeArray[lifeElementCounter].sprite;
+       // UIController.instance.heartIcon.sprite = currentLifeIcon;
 
         UIController.instance.hitPointBar.maxValue = maxHitPoints;
         UIController.instance.hitPointBar.value = currentHitPoints;
@@ -105,9 +114,13 @@ public class PlayerStatisticsController : MonoBehaviour
 
         weaponName = currentWeapon.GetComponent<Weapon>().weaponName;
 
-        weaponIcon = currentWeapon.GetComponent<Weapon>().inventoryDisplay;
+        weaponIcon = currentWeapon.GetComponent<Weapon>().uIDisplay;
+
+        //weaponIcon = currentWeapon.GetComponent<Weapon>().inventoryDisplay;
 
         UIController.instance.weaponIcon.sprite = weaponIcon.sprite;
+
+        /*  To hit + Weapon Damage */
 
         UIController.instance.weaponDamageMainScreen.text = weaponName.ToString();
 
@@ -137,6 +150,34 @@ public class PlayerStatisticsController : MonoBehaviour
         }
 
         return maxHitPoints;
+    }
+
+    //To Determine which Heart symbol is displayed in the UI
+    //Each time player takes damage call this function
+    public int LifeIcon (int currentHP, int maxHP)
+    {
+        float current = (float)currentHP;
+        float max = (float)maxHP;
+        int arrayPosition = 0;
+
+        float healthPercent = current / max;
+        
+        if (healthPercent > 0.5f && healthPercent < 0.75f)
+        {
+            arrayPosition = 1;
+        }
+
+        if (healthPercent > 0.25f && healthPercent < 0.5f)
+        {
+            arrayPosition = 2;
+        }
+
+        if (healthPercent < 0.25f)
+        {
+            arrayPosition = 3;
+        }
+
+        return arrayPosition;
     }
     
 

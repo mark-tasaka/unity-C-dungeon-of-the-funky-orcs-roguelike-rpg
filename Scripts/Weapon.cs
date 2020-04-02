@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour
     public SpriteRenderer uIDisplay;
 
     public SpriteRenderer inventoryDisplay;
+    
 
     public string weaponName;
     
