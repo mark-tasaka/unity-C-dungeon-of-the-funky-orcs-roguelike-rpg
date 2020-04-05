@@ -6,6 +6,10 @@
 --------------------------------------------------------------------------------------------------------------------------
 Update Log:
 
+Update 1.57:
+
+Apr 4, 2020: Modificaitons to the PlayerStatisticsController.cs and the Fungus.cs classes.  
+
 Update 1.56:
 
 Apr 1, 2020: LifeIcon.cs class added.  Updates to PlayerStatisticsController.cs, UIController.cs and Weapons.cs classes.  New UI graphics (life icons) added to the 'Custom Art' folder.
