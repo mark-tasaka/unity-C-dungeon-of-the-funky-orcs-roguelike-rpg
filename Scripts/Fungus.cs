@@ -101,16 +101,43 @@ public class Fungus : MonoBehaviour
         {
             PlayerStatisticsController.instance.currentHitPoints += 2;
 
+            AudioManager.instance.PlaySFX(7);
+
+
             if (PlayerStatisticsController.instance.currentHitPoints > PlayerStatisticsController.instance.maxHitPoints)
             {
                 PlayerStatisticsController.instance.currentHitPoints = PlayerStatisticsController.instance.maxHitPoints;
             }
 
+            //call LifeIcon() method
+
+            /*
+             * WORK ON THIS
+            int iconArrayPos = PlayerStatisticsController.instance.GetLifeIcon(PlayerStatisticsController.instance.currentHitPoints, PlayerStatisticsController.instance.maxHitPoints);
+
+            PlayerStatisticsController.instance.currentLifeIcon = PlayerStatisticsController.instance.lifeArray[iconArrayPos];
+            
+            UIController.instance.heartIcon.sprite = PlayerStatisticsController.instance.GetComponent<LifeIcon>().iconImage.sprite;
+            */
+
+
         }
 
         if (fungi == false)
         {
-            PlayerStatisticsController.instance.currentHitPoints -= 1;
+            PlayerStatisticsController.instance.currentHitPoints -= 5;
+
+            AudioManager.instance.PlaySFX(8);
+
+            //call LifeIcon() method
+            /*
+             * WORK ON THIS
+            int iconArrayPos = PlayerStatisticsController.instance.GetLifeIcon(PlayerStatisticsController.instance.currentHitPoints, PlayerStatisticsController.instance.maxHitPoints);
+
+            PlayerStatisticsController.instance.currentLifeIcon = PlayerStatisticsController.instance.lifeArray[iconArrayPos];
+            
+            UIController.instance.heartIcon.sprite = PlayerStatisticsController.instance.GetComponent<LifeIcon>().iconImage.sprite;
+            */
         }
 
         UIController.instance.hitPointBar.value = PlayerStatisticsController.instance.currentHitPoints;

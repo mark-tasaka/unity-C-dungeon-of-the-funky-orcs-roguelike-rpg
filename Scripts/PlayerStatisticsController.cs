@@ -34,12 +34,14 @@ public class PlayerStatisticsController : MonoBehaviour
     private string weaponName;
     private SpriteRenderer weaponIcon;
 
-
+    /*
+     * WORK ON THIS
     [Header("UI Life")]
     public GameObject[] lifeArray;
     public int lifeElementCounter = 0;
-    private SpriteRenderer currentLifeIcon;
-
+    public GameObject currentLifeIcon;
+    public SpriteRenderer lifeIcon;
+    */
 
     private void Awake()
     {
@@ -66,12 +68,19 @@ public class PlayerStatisticsController : MonoBehaviour
 
         }
 
-        lifeElementCounter = LifeIcon(currentHitPoints, maxHitPoints);
-       // currentLifeIcon.sprite = lifeArray[lifeElementCounter].sprite;
-       // UIController.instance.heartIcon.sprite = currentLifeIcon;
+        /*
+         * 
+         * WORK ON THIS
+         * 
+        lifeElementCounter = GetLifeIcon(currentHitPoints, maxHitPoints);
 
-        UIController.instance.hitPointBar.maxValue = maxHitPoints;
-        UIController.instance.hitPointBar.value = currentHitPoints;
+        currentLifeIcon = lifeArray[lifeElementCounter];
+
+        lifeIcon = currentLifeIcon.GetComponent<LifeIcon>().iconImage;
+
+        UIController.instance.heartIcon.sprite = lifeIcon.sprite;
+        */
+
         UIController.instance.hitPointText.text = currentHitPoints.ToString() + " / " + maxHitPoints.ToString();
 
         //Experience Points
@@ -154,7 +163,7 @@ public class PlayerStatisticsController : MonoBehaviour
 
     //To Determine which Heart symbol is displayed in the UI
     //Each time player takes damage call this function
-    public int LifeIcon (int currentHP, int maxHP)
+    public int GetLifeIcon (int currentHP, int maxHP)
     {
         float current = (float)currentHP;
         float max = (float)maxHP;
